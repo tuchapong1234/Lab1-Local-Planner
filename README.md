@@ -22,9 +22,18 @@ To start Run Simulation you can run launch file
 ```bash
 $ ros2 launch ur5_ros2_gazebo ur5_simulation.launch.py
 $ ros2 launch carver_navigation vmegarover_navigation.launch.py
+```
+
+To using Standard VFF 
+```bash
 $ ros2 launch lab1 vff_controller.launch.py
+```
+
+To using Modify VFF 
+```bash
 $ ros2 launch lab1 modify_vff_controller.launch.py
 ```
+
 
 # 2. System overview
 ## 2.1 system_interface_diagram
@@ -162,7 +171,7 @@ You can implement these two algorithms by using a goal point selected from the P
 
 
 
-### 5.1 Standard VFF Algorithm & Modified VFF Algorithm Testing
+### 5.1 Standard VFF Algorithm & Modify VFF Algorithm Testing
 
 ### Condition 1: Evaluation in Condition of No Additional Obstacles
 
@@ -172,11 +181,11 @@ You can implement these two algorithms by using a goal point selected from the P
 
 3. Evaluating Robot Movement in Narrow Angles / Compact Spaces
 
-### Video of Modified VFF Algorithm Testing
+### Video of Modify VFF Algorithm Testing
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JB25mcsy4QA/0.jpg)](https://www.youtube.com/watch?v=Tkn7DVA4PY4)
 
-### Video of Modified VFF Algorithm Testing
+### Video of Modify VFF Algorithm Testing
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JB25mcsy4QA/0.jpg)](https://www.youtube.com/watch?v=JB25mcsy4QA)
 
@@ -201,11 +210,11 @@ You can implement these two algorithms by using a goal point selected from the P
 
 <img src="https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/71d2d065-001b-4540-a91e-d4f151fb218a" width="500" height="500">
 
-### 5.2 Comparing Result between Standard VFF Algorithm & Modified VFF Algorithm
+### 5.2 Comparing Result between Standard VFF Algorithm & Modify VFF Algorithm
 
 ### Condition 1: Evaluation in Condition of No Additional Obstacles
 
-| Type       |  Testing Situation       |Standard VFF  | Modified VFF
+| Type       |  Testing Situation       |Standard VFF  | Modify VFF
 | :---: | :---:| :---: | :---:
 | Narrow    | Doorway  | Fail | Pass |
 | Wide  | Doorway  | Pass | Pass |
@@ -216,7 +225,7 @@ You can implement these two algorithms by using a goal point selected from the P
 
 ### Condition 2: Evaluation in Condition of Additional Obstacles
 
-| Obstacle Object       |  Testing Situation      |Standard VFF  | Modified VFF
+| Obstacle Object       |  Testing Situation      |Standard VFF  | Modify VFF
 | :---: | :---:| :---: | :---:
 | Cylindrical | middle of Pathways  | Fail | Fail |
 | Cube  | middle of Pathways  | Fail | Fail |
