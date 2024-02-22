@@ -37,7 +37,7 @@ ros2 launch carver_bringup carver_bringup.launch.py
 # 2. System overview
 ## 2.1 system_interface_diagram
 
-![alt text](image-5.png)
+![Screenshot from 2024-02-22 20-27-46](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/d2a31ae8-4852-473a-b302-04e571de2f20)
 
 ### Block Description
 
@@ -54,16 +54,15 @@ purple box: tunning parameter
 ```bash
 rqt_graph
 ```
-![alt text](image-4.png)
+![Screenshot from 2024-02-22 19-28-23](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/bd7dbe52-339f-4410-8ac3-f837e0a8310f)
 
 # 3. Odometry
 ## 3.1 Wheel Odometry 
 wheel odometry is one of methods to estimate pose of the robot. It involves using sensors, usually encoders, mounted on a vehicle's wheels to measure their rotational movement. By tracking the number of rotations with robot description (wheel diameter, distance between wheel) can use to calculate how far the vehicle has traveled. This information is then used to estimate the vehicle's position and orientation based on the assumption that the wheels have not slipped or skidded significantly. While wheel odometry is a useful method for estimating short-term movement in robotics and autonomous vehicles, it can be affected by wheel slippage, uneven terrain, and other factors, leading to inaccuracies over time.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![alt text](image-1.png)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![Screenshot from 2024-02-22 17-13-44](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/3b44d227-e3e6-45d6-b7bc-1e179054e595)
 
 ### Forward Kinematics 
-
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $w_{robot}\ =\frac{r\cdot\dot{\phi_{L}}\ -\ r\cdot\dot{\phi_{R}}\ }{B}$
 
@@ -101,7 +100,7 @@ A local planner is use to navigate by constrant of immediate obstacles and make 
 ## 4.1 Pure Pursuit Algorithm
 Pure Pursuit Algorithm is a method used in robotic or autonomous vehicle control for path tracking. It calculates the steering commands required to follow a specified path by continuously aiming to intercept a reference point on that path. The algorithm works by selecting a point ahead of the vehicle along the desired path. This point serves as the target for the vehicle to reach.The algorithm generates steering commands that guide the vehicle towards the path while maintaining a smooth trajectory.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![alt text](image-2.png)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/81d92bd2-316b-437f-a603-689f61e9f2db)
 
 ### Pseudo Code
 
@@ -140,7 +139,7 @@ obstacle avoidance refers to the process of designing and implementing systems t
 Virtual Force Field (VFF) algorithm is a computational method used for simulating the behavior of interconnected objects within a system. Attraction and Repulsion: Each object in the virtual environment exerts a force on other nearby objects. Contain of two force can be either attract them (like gravity) or repel them (like a magnetic force). VFF algorithm calculates these virtual forces between objects based on their positions and certain properties like mass or charge. For example, if two objects are close together, they might exert an attractive force on each other, trying to pull them closer. If they get too close, they might exert a repulsive force to prevent them from colliding.
 VFF algorithm provides a way to simulate the behavior of objects in a virtual environment by modeling the forces acting on them and how they respond to those forces.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ![alt text](image-3.png)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/48505d37-ea1b-4a79-b81b-fae3bb801062)
 
 ### Pseudo Code
 
