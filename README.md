@@ -33,6 +33,18 @@ To using Modify VFF
 ```bash
 $ ros2 launch lab1 modify_vff_controller.launch.py
 ```
+## 1.3 Step to using Simulation (world+robot in Gazebo) & Rviz.
+After run simulation in 1.2 you will see.
+![สกรีนช็อต 2024-02-23 033207](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/e554aeb4-6f75-42ea-ac42-9f3ce1e148aa)
+
+click at the top of RVIZ page "Publish Point" Button
+![สกรีนช็อต 2024-02-23 033505](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/7f464c46-94cf-4789-9b4b-f44e1be8db2c)
+
+click on the map in RVIZ to set the final goal for robot to follow
+
+Robot will folow the red path that has been generated
+![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/1e14af8c-86cb-453d-87b1-530f0564cd88)
+
 
 
 # 2. System overview
