@@ -5,7 +5,7 @@ To installation this project
 
 ```bash
 git clone https://github.com/tuchapong1234/Lab1-Local-Planner.git
-cd /Lab1-Local-Planner
+cd Lab1-Local-Planner
 colcon build
 source install/setup.bash
 ```
