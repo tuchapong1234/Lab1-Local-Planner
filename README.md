@@ -185,7 +185,7 @@ You can implement these two algorithms by using a goal point selected from the P
 
 ### Video of Modified VFF Algorithm Testing
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Tkn7DVA4PY4/0.jpg)](https://www.youtube.com/watch?v=Tkn7DVA4PY4)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JB25mcsy4QA/0.jpg)](https://www.youtube.com/watch?v=Tkn7DVA4PY4)
 
 ### Video of Modified VFF Algorithm Testing
 
