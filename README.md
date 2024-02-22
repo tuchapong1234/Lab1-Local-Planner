@@ -1,15 +1,14 @@
 # Lab1-Local-Planner
 ## 1. Getting Started
-## 1.1 ROS2 setup environment
-Follow the [Official ROS 2 tutorial](https://docs.ros.org/en/foxy/Tutorials/Colcon-Tutorial.html) to create your Colcon workspace.
+## 1.1 Intallation package
+To installation this project
 
 ```bash
-mkdir ~/your_workspace
-cd ~/your_workspace
+git clone https://github.com/tuchapong1234/Lab1-Local-Planner.git
+cd ~/Lab1-Local-Planner
 colcon build
 source install/setup.bash
 ```
-
 To automate workspace setup every time you open a new terminal, add the following line to your `~/.bashrc` or `~/.bash_profile` file:
 
 ```bash
@@ -17,17 +16,7 @@ echo "source ~/your_workspace/install/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## 1.2 Intallation package
-To installation this project
-
-```bash
-cd ~/your_workspace
-git clone https://github.com/tuchapong1234/Lab1-Local-Planner.git
-colcon build
-source install/setup.bash
-```
-
-## 1.3 Run Simulation (world+robot in Gazebo) & Rviz.
+## 1.2 Run Simulation (world+robot in Gazebo) & Rviz.
 To start Run Simulation you can run launch file
 
 ```bash
@@ -216,7 +205,7 @@ You can implement these two algorithms by using a goal point selected from the P
 
 ### Condition 1: Evaluation in Condition of No Additional Obstacles
 
-| Testing       |  Testing       |Standard VFF  | Modified VFF
+| Type       |  Testing Situation       |Standard VFF  | Modified VFF
 | :---: | :---:| :---: | :---:
 | Narrow    | Doorway  | Fail | Pass |
 | Wide  | Doorway  | Pass | Pass |
@@ -227,7 +216,7 @@ You can implement these two algorithms by using a goal point selected from the P
 
 ### Condition 2: Evaluation in Condition of Additional Obstacles
 
-| Testing       |  Testing       |Standard VFF  | Modified VFF
+| Obstacle Object       |  Testing Situation      |Standard VFF  | Modified VFF
 | :---: | :---:| :---: | :---:
 | Cylindrical | middle of Pathways  | Fail | Fail |
 | Cube  | middle of Pathways  | Fail | Fail |
@@ -235,6 +224,10 @@ You can implement these two algorithms by using a goal point selected from the P
 | Cube  | offset middle of Pathways  | Pass | Pass |
 | Cylindrical  | corner  | Fail | Fail |
 | Cube | corner  | Fail | Fail |
+
+### Conclusion
+
+From the experiments in case 1, which tested the capabilities of navigation in various points such as tight corners or narrow pathways, it was found that our Modified VFF performed better than the general VFF. This is because it can navigate well in narrow paths, including the ability to reverse out of tight corners, which the general VFF cannot do. As for case 2, both algorithms are able to avoid cylindrical obstacles well, except when they are positioned at the apex of a curve. This is because the repulsive force cannot counteract the attractive force. However, neither algorithm can avoid rectangular obstacles because the repulsive force is insufficient to prevent collisions during evasion maneuvers. The reason for not being able to increase the repulsive force is because it would hinder the robot from navigating narrow passages. Therefore, it can be concluded that the VFF algorithm is not suitable for narrow pathways.
 
 
 
