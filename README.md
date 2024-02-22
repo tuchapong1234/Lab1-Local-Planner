@@ -168,6 +168,8 @@ VFF algorithm provides a way to simulate the behavior of objects in a virtual en
 
 You can implement these two algorithms by using a goal point selected from the Pure Pursuit Algorithm as an attractive vector of the VFF Algorithm. These can generate a vector toward the goal but still avoid obstacles by repulsive vectors that generate away from obstacles. The combination of these two vectors can generate a new vector pulling the robot toward the goal and pushing away from obstacles.
 
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JB25mcsy4QA/0.jpg)](https://www.youtube.com/watch?v=JB25mcsy4QA)
+
 ### 5.1 Standard VFF Algorithm & Modified VFF Algorithm Testing
 
 ### Condition 1: Evaluation in Condition of No Additional Obstacles
