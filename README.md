@@ -65,16 +65,16 @@ wheel odometry is one of methods to estimate pose of the robot. It involves usin
 ### Forward Kinematics 
 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$w_{robot}\ =\frac{r\cdot\dot{\phi_{L}}\ -\ r\cdot\dot{\phi_{R}}\ }{B}$
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $w_{robot}\ =\frac{r\cdot\dot{\phi_{L}}\ -\ r\cdot\dot{\phi_{R}}\ }{B}$
 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$v_{robot}\ =\frac{r\cdot\dot{\phi_{L}}\ +\ r\cdot\dot{\phi_{R}}\ }{2}$
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $v_{robot}\ =\frac{r\cdot\dot{\phi_{L}}\ +\ r\cdot\dot{\phi_{R}}\ }{2}$
 
 ### Inverse Kinematics 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\dot{\phi_{L}}\ =\ \ \frac{2\cdot v_{robot}\ +\ B\cdot w_{robot}}{2\cdot r}$
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $\dot{\phi_{L}}\ =\ \ \frac{2\cdot v_{robot}\ +\ B\cdot w_{robot}}{2\cdot r}$
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\dot{\phi_{R}}\ =\ \ \frac{2\cdot v_{robot}\ -\ B\cdot w_{robot}}{2\cdot r}$
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $\dot{\phi_{R}}\ =\ \ \frac{2\cdot v_{robot}\ -\ B\cdot w_{robot}}{2\cdot r}$
 
 Where:
 
@@ -86,9 +86,9 @@ $r$ is the radius of the wheel.
 
 $B$ is the distance between the wheel.
 
-$\dot{\phi_{L}}\ $ is the angular velocity of left wheel.
+$\dot{\phi_{L}}\$ is the angular velocity of left wheel.
 
-$\dot{\phi_{R}}\ $ is the angular velocity of right wheel.
+$\dot{\phi_{R}}\$ is the angular velocity of right wheel.
 
 In this work we use 
 - Forward kinematic to transform Wheel velocity or `/velocity_controllers/commands` to robot velocity or `/cmd_vel`
@@ -140,7 +140,7 @@ obstacle avoidance refers to the process of designing and implementing systems t
 Virtual Force Field (VFF) algorithm is a computational method used for simulating the behavior of interconnected objects within a system. Attraction and Repulsion: Each object in the virtual environment exerts a force on other nearby objects. Contain of two force can be either attract them (like gravity) or repel them (like a magnetic force). VFF algorithm calculates these virtual forces between objects based on their positions and certain properties like mass or charge. For example, if two objects are close together, they might exert an attractive force on each other, trying to pull them closer. If they get too close, they might exert a repulsive force to prevent them from colliding.
 VFF algorithm provides a way to simulate the behavior of objects in a virtual environment by modeling the forces acting on them and how they respond to those forces.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![alt text](image-3.png)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ![alt text](image-3.png)
 
 ### Pseudo Code
 
@@ -210,6 +210,7 @@ You can implement these two algorithms by using a goal point selected from the P
 | Cube  | offset middle of Pathways  | Content Cell | Content Cel |
 | Cylindrical  | corner  | Content Cell | Content Cel |
 | Cube | corner  | Content Cell | Content Cel |
+
 
 
 
