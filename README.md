@@ -131,8 +131,6 @@ Pure Pursuit Algorithm is a method used in robotic or autonomous vehicle control
 
     Return goal_point [Return goal_point to use as a local set point for robot to follow]
 
-### Result
-
 ## 5. Obstacle Avoidance
 
 obstacle avoidance refers to the process of designing and implementing systems that enable robots or autonomous vehicles to detect and navigate around obstacles in their environment. This typically involves using sensors such as cameras, lidar, radar, or ultrasonic sensors to perceive the surroundings, and then employing algorithms to analyze this sensory data and make decisions about how to maneuver to avoid collisions. The algorithms may involve techniques such as path planning, trajectory generation, and control theory to ensure safe and efficient navigation. Conclusion, obstacle avoidance is a critical aspect of autonomous systems design, enabling them to operate safely and effectively in complex and dynamic environments.
@@ -167,10 +165,53 @@ VFF algorithm provides a way to simulate the behavior of objects in a virtual en
     
     return vff_vector
 
-### Result
-
 ## 5. Implementing local planner (Pure Pursuit Algorithm) with Obstacle Avoidance (VFF Algorithm)
 
 You can implement these two algorithms by using a goal point selected from the Pure Pursuit Algorithm as an attractive vector of the VFF Algorithm. These can generate a vector toward the goal but still avoid obstacles by repulsive vectors that generate away from obstacles. The combination of these two vectors can generate a new vector pulling the robot toward the goal and pushing away from obstacles.
 
-### Result
+### 5.1 Standard VFF Algorithm & Modified VFF Algorithm Testing
+
+### Condition 1: Evaluation in Condition of No Additional Obstacles
+
+1. Evaluating Robot Movement Narrow / Wide Doorway 
+
+2. Evaluating Robot Movement Narrow / Wide Pathways 
+
+3. Evaluating Robot Movement in Narrow Angles / Compact Spaces
+
+### Condition 2: Evaluation in Condition of Additional Obstacles
+
+1. Evaluating Robot Movement in the middle of Wide Pathways with (Cylindrical / Cube)
+
+2. Evaluating Robot Movement offset from the middle of Wide Pathways with (Cylindrical / Cube)
+
+3. Evaluating Robot Movement at the corner with (Cylindrical / Cube)
+
+### 5.2 Comparing Result between Standard VFF Algorithm & Modified VFF Algorithm
+
+### Condition 1: Evaluation in Condition of No Additional Obstacles
+
+| Testing       |  Testing       |Standard VFF  | Modified VFF
+| :---: | :---:| :---: | :---:
+| Narrow    | Doorway  | Content Cel | Content Cel |
+| Wide  | Doorway  | Content Cell | Content Cel |
+| Narrow  | Pathways   | Content Cell | Content Cel |
+| Wide  | Pathways   | Content Cell | Content Cel |
+| Narrow  | Angles  | Content Cell | Content Cel |
+| Compact  | Spaces | Content Cell | Content Cel |
+
+### Condition 2: Evaluation in Condition of Additional Obstacles
+
+| Testing       |  Testing       |Standard VFF  | Modified VFF
+| :---: | :---:| :---: | :---:
+| Cylindrical | middle of Pathways  | Content Cell | Content Cel |
+| Cube  | middle of Pathways  | Content Cell | Content Cel |
+| Cylindrical  | offset middle of Pathways  | Content Cell | Content Cel |
+| Cube  | offset middle of Pathways  | Content Cell | Content Cel |
+| Cylindrical  | corner  | Content Cell | Content Cel |
+| Cube | corner  | Content Cell | Content Cel |
+
+
+
+
+
