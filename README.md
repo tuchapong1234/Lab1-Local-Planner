@@ -192,23 +192,23 @@ You can implement these two algorithms by using a goal point selected from the P
 
 | Testing       |  Testing       |Standard VFF  | Modified VFF
 | :---: | :---:| :---: | :---:
-| Narrow    | Doorway  | Content Cel | Content Cel |
-| Wide  | Doorway  | Content Cell | Content Cel |
-| Narrow  | Pathways   | Content Cell | Content Cel |
-| Wide  | Pathways   | Content Cell | Content Cel |
-| Narrow  | Angles  | Content Cell | Content Cel |
-| Compact  | Spaces | Content Cell | Content Cel |
+| Narrow    | Doorway  | Fail | Pass |
+| Wide  | Doorway  | Pass | Pass |
+| Narrow  | Pathways   | Fail | Pass |
+| Wide  | Pathways   | Pass | Pass |
+| Narrow  | Angles  | Fail | Pass |
+| Compact  | Spaces | Fail | Pass |
 
 ### Condition 2: Evaluation in Condition of Additional Obstacles
 
 | Testing       |  Testing       |Standard VFF  | Modified VFF
 | :---: | :---:| :---: | :---:
-| Cylindrical | middle of Pathways  | Content Cell | Content Cel |
-| Cube  | middle of Pathways  | Content Cell | Content Cel |
-| Cylindrical  | offset middle of Pathways  | Content Cell | Content Cel |
-| Cube  | offset middle of Pathways  | Content Cell | Content Cel |
-| Cylindrical  | corner  | Content Cell | Content Cel |
-| Cube | corner  | Content Cell | Content Cel |
+| Cylindrical | middle of Pathways  | Fail | Fail |
+| Cube  | middle of Pathways  | Fail | Fail |
+| Cylindrical  | offset middle of Pathways  | Pass | Pass |
+| Cube  | offset middle of Pathways  | Pass | Pass |
+| Cylindrical  | corner  | Fail | Fail |
+| Cube | corner  | Fail | Fail |
 
 
 
