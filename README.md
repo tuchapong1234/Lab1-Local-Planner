@@ -100,7 +100,7 @@ A local planner is use to navigate by constrant of immediate obstacles and make 
 ## 4.1 Pure Pursuit Algorithm
 Pure Pursuit Algorithm is a method used in robotic or autonomous vehicle control for path tracking. It calculates the steering commands required to follow a specified path by continuously aiming to intercept a reference point on that path. The algorithm works by selecting a point ahead of the vehicle along the desired path. This point serves as the target for the vehicle to reach.The algorithm generates steering commands that guide the vehicle towards the path while maintaining a smooth trajectory.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/81d92bd2-316b-437f-a603-689f61e9f2db)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/81d92bd2-316b-437f-a603-689f61e9f2db)
 
 ### Pseudo Code
 
@@ -139,7 +139,7 @@ obstacle avoidance refers to the process of designing and implementing systems t
 Virtual Force Field (VFF) algorithm is a computational method used for simulating the behavior of interconnected objects within a system. Attraction and Repulsion: Each object in the virtual environment exerts a force on other nearby objects. Contain of two force can be either attract them (like gravity) or repel them (like a magnetic force). VFF algorithm calculates these virtual forces between objects based on their positions and certain properties like mass or charge. For example, if two objects are close together, they might exert an attractive force on each other, trying to pull them closer. If they get too close, they might exert a repulsive force to prevent them from colliding.
 VFF algorithm provides a way to simulate the behavior of objects in a virtual environment by modeling the forces acting on them and how they respond to those forces.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/48505d37-ea1b-4a79-b81b-fae3bb801062)
+&emsp;&emsp;&emsp;&emsp; ![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/48505d37-ea1b-4a79-b81b-fae3bb801062)
 
 ### Pseudo Code
 
@@ -168,7 +168,7 @@ VFF algorithm provides a way to simulate the behavior of objects in a virtual en
 
 You can implement these two algorithms by using a goal point selected from the Pure Pursuit Algorithm as an attractive vector of the VFF Algorithm. These can generate a vector toward the goal but still avoid obstacles by repulsive vectors that generate away from obstacles. The combination of these two vectors can generate a new vector pulling the robot toward the goal and pushing away from obstacles.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JB25mcsy4QA/0.jpg)](https://www.youtube.com/watch?v=JB25mcsy4QA)
+
 
 ### 5.1 Standard VFF Algorithm & Modified VFF Algorithm Testing
 
@@ -180,13 +180,34 @@ You can implement these two algorithms by using a goal point selected from the P
 
 3. Evaluating Robot Movement in Narrow Angles / Compact Spaces
 
+### Video of Modified VFF Algorithm Testing
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JB25mcsy4QA/0.jpg)](https://www.youtube.com/watch?v=JB25mcsy4QA)
+
+### Video of Modified VFF Algorithm Testing
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JB25mcsy4QA/0.jpg)](https://www.youtube.com/watch?v=JB25mcsy4QA)
+
 ### Condition 2: Evaluation in Condition of Additional Obstacles
 
 1. Evaluating Robot Movement in the middle of Wide Pathways with (Cylindrical / Cube)
 
-2. Evaluating Robot Movement offset from the middle of Wide Pathways with (Cylindrical / Cube)
+<img src="https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/8551e69c-0ab8-4a45-bd59-f6df07123bcd" width="500" height="500">
 
-3. Evaluating Robot Movement at the corner with (Cylindrical / Cube)
+<img src="https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/6b02df88-5e93-4c46-aed4-4b73824ea775" width="500" height="500">
+
+3. Evaluating Robot Movement offset from the middle of Wide Pathways with (Cylindrical / Cube)
+
+<img src="https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/5da0cc1b-ab2a-45ce-be99-2833a34b9316" width="500" height="500">
+
+<img src="https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/babb0aa4-4d38-4bb4-81de-93b5370934d2" width="500" height="500">
+
+
+5. Evaluating Robot Movement at the corner with (Cylindrical / Cube)
+
+<img src="https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/23c701c3-f607-4b4e-895a-0db099b17830" width="500" height="500">
+
+<img src="https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/71d2d065-001b-4540-a91e-d4f151fb218a" width="500" height="500">
 
 ### 5.2 Comparing Result between Standard VFF Algorithm & Modified VFF Algorithm
 
