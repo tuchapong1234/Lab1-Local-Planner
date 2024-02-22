@@ -23,17 +23,20 @@ To installation this project
 ```bash
 cd ~/your_workspace
 git clone https://github.com/tuchapong1234/Lab1-Local-Planner.git
+colcon build
+source install/setup.bash
 ```
 
-## 1.3 Running robot
-To start control robot you can run launch file
+## 1.3 Run Simulation (world+robot in Gazebo) & Rviz.
+To start Run Simulation you can run launch file
 
 ```bash
+$ ros2 launch ur5_ros2_gazebo ur5_simulation.launch.py
+$ ros2 launch carver_navigation vmegarover_navigation.launch.py
+$ ros2 launch lab1 vff_controller.launch.py
+$ ros2 launch lab1 modify_vff_controller.launch.py
+```
 
-```
-```bash
-ros2 launch carver_bringup carver_bringup.launch.py
-```
 # 2. System overview
 ## 2.1 system_interface_diagram
 
@@ -182,7 +185,7 @@ You can implement these two algorithms by using a goal point selected from the P
 
 ### Video of Modified VFF Algorithm Testing
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JB25mcsy4QA/0.jpg)](https://www.youtube.com/watch?v=JB25mcsy4QA)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Tkn7DVA4PY4/0.jpg)](https://www.youtube.com/watch?v=Tkn7DVA4PY4)
 
 ### Video of Modified VFF Algorithm Testing
 
