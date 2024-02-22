@@ -60,7 +60,7 @@ rqt_graph
 ## 3.1 Wheel Odometry 
 wheel odometry is one of methods to estimate pose of the robot. It involves using sensors, usually encoders, mounted on a vehicle's wheels to measure their rotational movement. By tracking the number of rotations with robot description (wheel diameter, distance between wheel) can use to calculate how far the vehicle has traveled. This information is then used to estimate the vehicle's position and orientation based on the assumption that the wheels have not slipped or skidded significantly. While wheel odometry is a useful method for estimating short-term movement in robotics and autonomous vehicles, it can be affected by wheel slippage, uneven terrain, and other factors, leading to inaccuracies over time.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![Screenshot from 2024-02-22 17-13-44](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/3b44d227-e3e6-45d6-b7bc-1e179054e595)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ![Screenshot from 2024-02-22 17-13-44](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/3b44d227-e3e6-45d6-b7bc-1e179054e595)
 
 ### Forward Kinematics 
 
@@ -100,7 +100,7 @@ A local planner is use to navigate by constrant of immediate obstacles and make 
 ## 4.1 Pure Pursuit Algorithm
 Pure Pursuit Algorithm is a method used in robotic or autonomous vehicle control for path tracking. It calculates the steering commands required to follow a specified path by continuously aiming to intercept a reference point on that path. The algorithm works by selecting a point ahead of the vehicle along the desired path. This point serves as the target for the vehicle to reach.The algorithm generates steering commands that guide the vehicle towards the path while maintaining a smooth trajectory.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/81d92bd2-316b-437f-a603-689f61e9f2db)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; ![image](https://github.com/tuchapong1234/Lab1-Local-Planner/assets/113016544/81d92bd2-316b-437f-a603-689f61e9f2db)
 
 ### Pseudo Code
 
