@@ -34,6 +34,27 @@ To start control robot you can run launch file
 ```bash
 ros2 launch carver_bringup carver_bringup.launch.py
 ```
+# 2. System overview
+## 2.1 system_interface_diagram
+
+![alt text](image-5.png)
+
+### Block Description
+
+white box: package / exacutable file
+
+green box: subscript topic
+
+blue box: publish topic
+
+blue box: tf
+
+purple box: tunning parameter
+## 2.2 rqt_graph 
+```bash
+rqt_graph
+```
+![alt text](image-4.png)
 
 # 3. Odometry
 ## 3.1 Wheel Odometry 
@@ -70,8 +91,8 @@ $\dot{\phi_{L}}\ $ is the angular velocity of left wheel.
 $\dot{\phi_{R}}\ $ is the angular velocity of right wheel.
 
 In this work we use 
-- Forward kinematic to transform Wheel velocity or `/cmd_vel` to robot velocity or `/cmd_vel`
-- Inverse kinematic to transform robot velocity or `/cmd_vel` to Wheel velocity or `/cmd_vel`
+- Forward kinematic to transform Wheel velocity or `/velocity_controllers/commands` to robot velocity or `/cmd_vel`
+- Inverse kinematic to transform robot velocity or `/cmd_vel` to Wheel velocity or `/velocity_controllers/commands`
 
 # 4. Local Planner
 
@@ -84,55 +105,72 @@ Pure Pursuit Algorithm is a method used in robotic or autonomous vehicle control
 
 ### Pseudo Code
 
-    lookahead distance
+    path [array of point generate from the robot to goal point by nav2]
 
-    Initialize empty arrays p_x and p_y
+    lookahead distance [distance between robot position and the goal point from Pure Pursuit Algorithm]
 
-    Initialize current_pose_index
+    p_x, p_y [Init empty list]
 
-    For i from current_pose_index to the end of path:
+    current_pose_index [Init select point in path]
 
-        Append path[i].pose.position.x to p_x
+    For i from current_pose_index to end of path do
 
-        Append path[i].pose.position.y to p_y
+        Append position from the path at i index to p_x and p_y 
 
-    Convert p_x and p_y to numpy arrays p_x_np and p_y_np
+    Convert list of p_x and p_y to numpy arrays as (p_x_np and p_y_np)
 
-    Calculate distance_np as the Euclidean distance between p_x_np, p_y_np and robot_pose.position.x, robot_pose.position.y
+    distance_array = Calculate the Euclidean distance between p_x_np, p_y_np and robot position 
 
-    Find indices where distance_np is greater than lookahead_distance
+    Find indices where distance_array is greater than lookahead distance
 
-    If indices array is not empty:
-        Set first_index as the first index in indices
-        Find the index of the minimum distance within indices and set it as min_goal_point_idx
-    Else:
-        Set first_index and min_goal_point_idx as 0
-        Print "No value found above the threshold."
+    Find the index of the minimum distance within indices and set it as min_goal_point_idx
 
-    Update current_pose_index based on min_goal_point_idx and first_index
+    Update current_pose_index based on min_goal_point_idx and previous current_pose_index
 
-    Calculate robot_orientation from robot_pose.orientation
+    goal_point = Find the different between path[current_pose_index] (current goal point) and robot position 
 
-    Calculate transformation matrix H_wr using robot_orientation and robot_pose.position
-
-    Calculate transformation matrix H_wg using path[current_pose_index].pose.position
-
-    Calculate inverse of H_wr and store it in inv_H_wr
-
-    Calculate transformation matrix H_rg by multiplying inv_H_wr and H_wg
-
-    Create a goal_point PoseStamped object with frame_id "base_link" and set its position based on H_rg
-
-    Create a goal_marker PoseStamped object with frame_id "map" and set its position based on path[current_pose_index].pose.position
-
-    Publish goal_marker
-
-    Return goal_point
+    Return goal_point [Return goal_point to use as a local set point for robot to follow]
 
 ### Result
 
 ## 5. Obstacle Avoidance
 
+obstacle avoidance refers to the process of designing and implementing systems that enable robots or autonomous vehicles to detect and navigate around obstacles in their environment. This typically involves using sensors such as cameras, lidar, radar, or ultrasonic sensors to perceive the surroundings, and then employing algorithms to analyze this sensory data and make decisions about how to maneuver to avoid collisions. The algorithms may involve techniques such as path planning, trajectory generation, and control theory to ensure safe and efficient navigation. Conclusion, obstacle avoidance is a critical aspect of autonomous systems design, enabling them to operate safely and effectively in complex and dynamic environments.
+
+## 5.1 Virtual Force Field (VFF) Algorithm
+
+Virtual Force Field (VFF) algorithm is a computational method used for simulating the behavior of interconnected objects within a system. Attraction and Repulsion: Each object in the virtual environment exerts a force on other nearby objects. Contain of two force can be either attract them (like gravity) or repel them (like a magnetic force). VFF algorithm calculates these virtual forces between objects based on their positions and certain properties like mass or charge. For example, if two objects are close together, they might exert an attractive force on each other, trying to pull them closer. If they get too close, they might exert a repulsive force to prevent them from colliding.
+VFF algorithm provides a way to simulate the behavior of objects in a virtual environment by modeling the forces acting on them and how they respond to those forces.
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![alt text](image-3.png)
+
 ### Pseudo Code
+
+    OBSTACLE_DISTANCE [Threshold distance for obstacle influence]
+    
+    vff_vector [Initialize the VFF vectors containing 3 vector 1. attractive (Goal-directed vector), 2. repulsive (Obstacle avoidance vector), 3. result (Combined vector)]
+
+    vff_vector[attractive] = Find attractive vector from goal_point (position x,y of goal point)
+
+    min_idx = Find the nearest obstacle distance index 
+    distance_min = Find the nearest obstacle distance 
+
+    if distance_min less than OBSTACLE_DISTANCE do
+        obstacle_angle = Find angle that has the nearest obstacle distance 
+        opposite_angle = Make the opposite angle from the obstacle_angle by plus pi to the obstacle_angle 
+        complementary_dist = Find the different value of distance_min and OBSTACLE_DISTANCE
+        gain = [Weight of the repulsive vector] recommend to use square of complementary_dist
+
+        vff_vector[repulsive_vector] = [Calculate repulsive vector components]
+    
+    vff_vector[result_vector] = Calculate the resultant vector by combining attractive and repulsive vectors
+    
+    return vff_vector
+
+### Result
+
+## 5. Implementing local planner (Pure Pursuit Algorithm) with Obstacle Avoidance (VFF Algorithm)
+
+You can implement these two algorithms by using a goal point selected from the Pure Pursuit Algorithm as an attractive vector of the VFF Algorithm. These can generate a vector toward the goal but still avoid obstacles by repulsive vectors that generate away from obstacles. The combination of these two vectors can generate a new vector pulling the robot toward the goal and pushing away from obstacles.
 
 ### Result
